@@ -8,6 +8,5 @@ How to use:
 3. Choose Window -> Extensions.
 4. Turn on Developer mode.
 5. Select Load unpacked and upload folder 'utkonos-interval-autopicker-master'.
-6. Go to your basket and proceed to checkout. You should be on the page https://www.utkonos.ru/ordering/interval 
-(the page should remain open during use). 
+6. Go to your basket and proceed to checkout. Allow notifications from Utkonos. You should be on the page https://www.utkonos.ru/ordering/interval (the page should remain open during use). 
 
