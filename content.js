@@ -1,7 +1,15 @@
-checkIntervals();
+if (Notification.permission === 'granted') {
+	checkIntervals();
+} else if (Notification.permission !== 'denied') {
+	Notification.requestPermission().then(function(permission) {
+      if (permission === 'granted') {
+        console.log('Permission grnted');
+		checkIntervals();
+      }
+    });
+}
 
 function checkIntervals() {
-
   const intervalsContainer = document.querySelector('.delivery_time_container');
 
   if (!intervalsContainer || intervalsContainer.querySelector('.interval_container.loading')) {
@@ -17,7 +25,8 @@ function checkIntervals() {
 
   if (intervalButton) {
     console.log('Found available interval');
-    notifyUser('Utkonos interval selected!');
+
+    new Notification('Utkonos interval selected!');
 
     intervalButton.click();
     document.querySelector('a[href="/ordering/check"]').click();
@@ -36,21 +45,5 @@ function checkIntervals() {
   setTimeout(() => {
     console.log('Reloading page');
     window.location.reload();
-  }, 5000);
-}
-
-function showNotification(message) {
-
-  if (Notification.permission === 'granted') {
-    new Notification(message);
-    return;
-  }
-
-  if (Notification.permission !== 'denied') {
-    Notification.requestPermission().then(function(permission) {
-      if (permission === 'granted') {
-        new Notification(message);
-      }
-    });
-  }
+  }, 60000);
 }
