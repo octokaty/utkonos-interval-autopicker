@@ -1,5 +1,5 @@
 # utkonos-interval-autopicker
-The plugin checks the available delivery time once in a minute, selects a first free interval, and sends a notification. 
+The extention checks the available delivery time once in a minute, selects a first free interval, and sends a notification. 
 
 How to use:
 1. Open Chrome.
